@@ -35,6 +35,12 @@
     }
 }
 
+.header-page__nav{
+    @media screen and (min-width: $desktop) {
+        margin-right: auto;
+    }
+}
+
 .site-nav{
     @media screen and (max-width: 767px) {
         display: none;

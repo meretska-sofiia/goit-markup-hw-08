@@ -2,8 +2,8 @@
     padding: 40px;
     width: 96%;
     height: 96%;
-    max-width: 528px;
-    max-height: 581px;
+    max-width: 450px;
+    max-height: 700px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -21,11 +21,15 @@
     .backdrop.is-hidden & {
             transform: translate(-50%, -50%) scale(0);
         }
-    
-    @media screen and (max-width: 1199px) {
-        max-width: 450px;
+    @media screen and (min-width: $mobile) {
         max-height: 609px;
     }
+
+    @media screen and (min-width: $desktop) {
+        max-width: 528px;
+        max-height: 581px;
+    }
+
 
 }
 
@@ -122,10 +126,6 @@
     }
 }
 
-.modal__agreement{
-    position: relative;
-}
-
 .modal__checkbox {
     display: flex;
     justify-content: center;
@@ -133,7 +133,8 @@
 
 .modal__label--checkbox {
     display: flex;
-    flex-wrap: wrap;
+    // flex-wrap: wrap;
+
     align-items: center;
     line-height: 1.71;
     cursor: pointer;
@@ -162,7 +163,10 @@
 }
 
 .modal__icon--uncheck {
-    display: inline-block;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
     width: 16px;
     height: 15px;
     border: 2px solid var(--title-text-color);
@@ -172,35 +176,29 @@
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-    .modal__checkbox:checked~& {
+    .modal__checkbox:checked + & {
             background-color: var(--accent-color);
             border: none;
         }
 
-    .modal__checkbox:focus~& {
+    .modal__checkbox:focus + & {
             border: 2px solid var(--accent-color);
         }
 }
 
 .modal__icon--check {
-    position: absolute;
     fill: transparent;
-
-    top: 4.5px;
-    left: 0;
-    padding-top: 3.5px;
-    padding-right: 1.5px;
-    padding-bottom: 3px;
-    padding-left: 3px;
 
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-    .modal__checkbox:checked~& {
+    .modal__checkbox:checked + & {
             fill: var(--button-white-color);
-        }
-    @media screen and (max-width: 1199px) {
-        top: 0;
-    }    
+        }  
+}
+
+.modal__icon-text{
+    display: inline-block;
+    vertical-align: middle;
 }
 
 .modal__button {
