@@ -1,8 +1,9 @@
 .modal {
     padding: 40px;
     width: 96%;
+    height: 96%;
     max-width: 450px;
-    max-height: 700px;
+    max-height: 609px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -20,9 +21,6 @@
     .backdrop.is-hidden & {
             transform: translate(-50%, -50%) scale(0);
         }
-    @media screen and (min-width: $mobile) {
-        max-height: 609px;
-    }
 
     @media screen and (min-width: $desktop) {
         max-width: 528px;
