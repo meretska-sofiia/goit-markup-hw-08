@@ -231,7 +231,6 @@ body {
 .modal {
   padding: 40px;
   width: 96%;
-  height: 96%;
   max-width: 450px;
   max-height: 700px;
   position: absolute;
